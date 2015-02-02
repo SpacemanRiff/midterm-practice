@@ -50,7 +50,17 @@ public class HangmanTest {
     // test pass correctly.
     @Test
     public void testSixOrMoreMissesCausesALoss() {
-        assertTrue(false);
+        Hangman h = new Hangman();
+        h.setWord("fail");
+        int numOccurrences;
+        numOccurrences = h.guess('k');
+        numOccurrences = h.guess('l');
+        numOccurrences = h.guess('o');
+        numOccurrences = h.guess('s');
+        numOccurrences = h.guess('e');
+        numOccurrences = h.guess('r');
+        boolean isLost = h.getResult() == Hangman.Result.LOSE;
+        assertTrue(isLost);
     }
     
     // Exam Question 5
@@ -59,8 +69,17 @@ public class HangmanTest {
     // implement the Hangman class methods required to make the 
     // test pass correctly.
     @Test
-    public void testGuessingEveryLetterBeforeSixMissesCausesAWin() {
-        assertTrue(false);
+    public void testGuessingEveryLetterBeforeSixMissesCausesAWin() {        
+        Hangman h = new Hangman();
+        h.setWord("winner");
+        int numOccurrences;
+        numOccurrences = h.guess('w');
+        numOccurrences = h.guess('i');
+        numOccurrences = h.guess('n');
+        numOccurrences = h.guess('e');
+        numOccurrences = h.guess('r');
+        boolean isWon = h.getResult() == Hangman.Result.WIN;
+        assertTrue(isWon);
     }
     
 }
